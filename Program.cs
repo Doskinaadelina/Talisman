@@ -1,20 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace Minesweeper
+namespace lab9_3
 {
-    static class Program
+    class Program
     {
-        
-        [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            gamer g1 = new gamer("Vika");
+            sobytie s = new sobytie();
+            ik k = new ik();
+            k.vypalo += s.Massage;
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine("Выпало количество очков {0} для игрока {1}", k.random(), g1.ToString());
+            }                       
+            Console.ReadKey();
         }
     }
 }
